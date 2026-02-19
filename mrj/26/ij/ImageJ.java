@@ -4,7 +4,6 @@ import ij.gui.*;
 import ij.plugin.*;
 import ij.plugin.filter.*;
 import ij.plugin.frame.*;
-import ij.stub.Applet;
 import ij.text.*;
 import ij.macro.Interpreter;
 import ij.io.Opener;
@@ -111,7 +110,7 @@ public class ImageJ extends Frame implements ActionListener,
 	private ProgressBar progressBar;
 	private JLabel statusLine;
 	private boolean firstTime = true;
-	private Applet applet; // null if not running as an applet
+	private Object applet; // null if not running as an applet
 	private Vector classes = new Vector();
 	private boolean exitWhenQuitting;
 	private boolean quitting;
@@ -138,7 +137,7 @@ public class ImageJ extends Frame implements ActionListener,
 	/** Creates a new ImageJ frame that runs as an applet.
 	    @deprecated Applets were removed in Java 26*/
 	@Deprecated(since = "IJ XX; Java 26")
-	public ImageJ(Applet applet) {
+	public ImageJ(Object applet) {
 		this(applet, STANDALONE);
 	}
 
@@ -148,7 +147,7 @@ public class ImageJ extends Frame implements ActionListener,
 	    @deprecated Applets were removed in Java 26.
 	 */
 	@Deprecated(since = "IJ XX; Java 26")
-	public ImageJ(Applet applet, int mode) {
+	public ImageJ(Object applet, int mode) {
 		super("ImageJ");
 		if ((mode&DEBUG)!=0)
 			IJ.setDebugMode(true);

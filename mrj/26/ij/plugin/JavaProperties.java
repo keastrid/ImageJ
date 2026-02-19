@@ -13,7 +13,6 @@ import ij.Menus;
 import ij.Prefs;
 import ij.gui.GUI;
 import ij.io.OpenDialog;
-import ij.stub.Applet;
 import ij.text.*;
 
 /** Displays the Java system properties in a text window. */
@@ -47,16 +46,7 @@ public class JavaProperties implements ij.plugin.PlugIn {
 				str2 = "<lf>";
 		}
 		list.add("  line.separator: " + str1 + str2);
-			
-		Applet applet = IJ.getApplet();
-		if (applet!=null) {
-			list.add("");
-			list.add("  code base: "+applet.getCodeBase());
-			list.add("  document base: "+applet.getDocumentBase());
-			list.add("  sample images dir: "+Prefs.getImagesURL());
-			TextWindow tw = new TextWindow("Properties", "", list, 400, 400);
-			return;
-		}
+
 		list.add("");
 		show("user.name");
 		show("user.home");

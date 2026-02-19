@@ -1,6 +1,5 @@
 package ij;
 import ij.process.*;
-import ij.stub.Applet;
 import ij.util.*;
 import ij.gui.ImageWindow;
 import ij.plugin.MacroInstaller;
@@ -53,7 +52,7 @@ public class Menus {
 	private static PopupMenu popup;
 
 	private static ImageJ ij;
-	private static Applet applet;
+	private static Object applet;
 	private Hashtable demoImagesTable = new Hashtable();
 	private static String ImageJPath, pluginsPath, macrosPath;
 	private static Properties menus;
@@ -85,7 +84,7 @@ public class Menus {
 	static boolean jnlp; // true when using Java WebStart
 	public static int setMenuBarCount;
 
-	Menus(ImageJ ijInstance, Applet appletInstance) {
+	Menus(ImageJ ijInstance, Object appletInstance) {
 		ij = ijInstance;
 		String title = ij!=null?ij.getTitle():null;
 		applet = appletInstance;

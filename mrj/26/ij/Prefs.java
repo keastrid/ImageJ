@@ -1,5 +1,4 @@
 package ij;
-import ij.stub.Applet;
 import ij.util.Java2;
 import java.io.*;
 import java.util.*;
@@ -311,7 +310,7 @@ public class Prefs {
 	 * @return	an error message if "IJ_Props.txt" not found.
 	*/
 	@Deprecated(since = "IJ XX; Java 26")
-	public static String load(Object ij, Applet applet) {
+	public static String load(Object ij, Object applet) {
 		if (ImageJDir==null)
 			ImageJDir = System.getProperty("user.dir");
 		if (ij!=null) {
@@ -357,19 +356,7 @@ public class Prefs {
 	*/
 
 	@Deprecated(since = "IJ XX; Java 26")
-	static String loadAppletProps(InputStream f, Applet applet) {
-		if (f==null)
-			return PROPS_NAME+" not found in ij.jar";
-		try {
-			props.load(f);
-			f.close();
-		}
-		catch (IOException e) {return("Error loading "+PROPS_NAME);}
-		try {
-			URL url = new URL(applet.getDocumentBase(), "images/");
-			imagesURL = url.toString();
-		}
-		catch (Exception e) {}
+	static String loadAppletProps(InputStream f, Object applet) {
 		return null;
 	}
 

@@ -1,6 +1,6 @@
 package ij;
 
-import ij.stub.Applet;
+import java.awt.Panel;
 
 /**
 	Runs ImageJ as an applet and optionally opens up to 
@@ -23,7 +23,7 @@ import ij.stub.Applet;
  @deprecated All methods can unconditionally throw since removal of Applets in Java 26.
 */
 @Deprecated(since = "IJ XX; Java 26")
-public class ImageJApplet extends Applet {
+public class ImageJApplet extends Panel {
 
 	/** Starts ImageJ if it's not already running. */
     public void init() {

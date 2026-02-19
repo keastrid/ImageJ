@@ -34,10 +34,10 @@ public class PluginClassLoader extends URLClassLoader {
     protected String path;
     private static final Map<URI, CodeSource> METADATA_CACHE = new HashMap<>();
     private static final Map<ClassDesc, ClassDesc> APPLET_REMAP = Map.of(
-        ClassDesc.of("java.applet.Applet"), ClassDesc.of("ij.stub.Applet"),
-        ClassDesc.of("java.applet.AppletContext"), ClassDesc.of("ij.stub.AppletContext"),
-        ClassDesc.of("java.applet.AppletStub"), ClassDesc.of("ij.stub.AppletStub"),
-        ClassDesc.of("java.applet.AudioClip"), ClassDesc.of("ij.stub.AudioClip")
+        ClassDesc.of("java.applet.Applet"), ClassDesc.of("java.lang.Object"),
+        ClassDesc.of("java.applet.AppletContext"), ClassDesc.of("java.lang.Object"),
+        ClassDesc.of("java.applet.AppletStub"), ClassDesc.of("java.lang.Object"),
+        ClassDesc.of("java.applet.AudioClip"), ClassDesc.of("java.lang.Object")
     );
     private static final ClassTransform APPLET_TRANSFORMER = createTransform();
 

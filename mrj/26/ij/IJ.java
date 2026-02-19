@@ -2,7 +2,6 @@ package ij;
 
 import ij.gui.*;
 import ij.process.*;
-import ij.stub.Applet;
 import ij.text.*;
 import ij.io.*;
 import ij.plugin.*;
@@ -56,7 +55,7 @@ public class IJ {
     public static final char degreeSymbol = '\u00B0';
 
 	private static ImageJ ij;
-	private static Applet applet;
+	private static Object applet;
 	private static ProgressBar progressBar;
 	private static TextPanel textPanel;
 	private static String osname, osarch;
@@ -121,7 +120,7 @@ public class IJ {
 		df[0].setRoundingMode(RoundingMode.HALF_UP);
 	}
 			
-	static void init(ImageJ imagej, Applet theApplet) {
+	static void init(ImageJ imagej, Object theApplet) {
 		ij = imagej;
 		applet = theApplet;
 		progressBar = ij.getProgressBar();
@@ -443,7 +442,7 @@ public class IJ {
 	 * @deprecated Always returns null since removal of Applets in Java 26.
 	 */
 	@Deprecated(since = "IJ XX; Java 26")
-	public static Applet getApplet() {
+	public static Object getApplet() {
 		return null;
 	}
 	

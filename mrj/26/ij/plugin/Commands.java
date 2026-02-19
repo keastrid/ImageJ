@@ -16,7 +16,6 @@ import ij.io.FileSaver;
 import ij.io.Opener;
 import ij.macro.Interpreter;
 import ij.plugin.frame.*;
-import ij.stub.Applet;
 import ij.text.TextWindow;
 	
 /**	Runs miscellaneous File and Window menu commands. */
@@ -155,7 +154,7 @@ public class Commands implements ij.plugin.PlugIn {
 	
 	// Plugins>Macros>Open Startup Macros command
 	void openStartupMacros() {
-		Applet applet = IJ.getApplet();
+		Object applet = IJ.getApplet();
 		if (applet!=null)
 			IJ.run("URL...", "url="+IJ.URL2+"/applet/StartupMacros.txt");
 		else {
